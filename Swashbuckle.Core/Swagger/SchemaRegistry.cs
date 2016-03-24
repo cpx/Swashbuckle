@@ -141,25 +141,25 @@ namespace Swashbuckle.Swagger
                 case "System.UInt16":
                 case "System.Int32":
                 case "System.UInt32":
-                    return new Schema { type = "integer", format = "int32" };
+                    return new Schema { type = "integer", format = "int32", example = 0 };
                 case "System.Int64":
                 case "System.UInt64":
-                    return new Schema { type = "integer", format = "int64" };
+                    return new Schema { type = "integer", format = "int64", example = 0L };
                 case "System.Single":
-                    return new Schema { type = "number", format = "float" };
+                    return new Schema { type = "number", format = "float", example = 0f };
                 case "System.Double":
                 case "System.Decimal":
-                    return new Schema { type = "number", format = "double" };
+                    return new Schema { type = "number", format = "double", example = 0.0d };
                 case "System.Byte[]":
                 case "System.SByte[]":
-                    return new Schema { type = "string", format = "byte" };
+                    return new Schema { type = "string", format = "byte", example = 0 };
                 case "System.Boolean":
-                    return new Schema { type = "boolean" };
+                    return new Schema { type = "boolean", example = false };
                 case "System.DateTime":
                 case "System.DateTimeOffset":
-                    return new Schema { type = "string", format = "date-time" };
+                    return new Schema { type = "string", format = "date-time", example = new DateTime(1970, 01, 01) };
                 case "System.Guid":
-                    return new Schema { type = "string", format = "uuid" };
+                    return new Schema { type = "string", format = "uuid", example = new Guid("01234567-89AB-CDEF-0123-456789ABCDEF") };
                 default:
                     return new Schema { type = "string" };
             }
